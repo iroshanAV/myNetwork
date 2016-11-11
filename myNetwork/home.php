@@ -2,7 +2,6 @@
 session_start();
 include("includes/connection.php");
 include("functions/functions.php");
-
 if(!isset($_SESSION['user_email'])){
    header("location: index.php");
 }else{

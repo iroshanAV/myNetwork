@@ -6,9 +6,7 @@ include("functions/functions.php");
 if(!isset($_SESSION['user_email'])){
    header("location: index.php");
 }else{
-
 ?>
-
 <html>
 <head>
 	<title>myNetwork</title>
@@ -20,12 +18,9 @@ if(!isset($_SESSION['user_email'])){
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/home_style.css">
 </head>
-<body>
-   
-
-    <nav class="navbar navbar-default">
-  <div class="container-fluid">
-   
+<body>  
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">   
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -34,10 +29,8 @@ if(!isset($_SESSION['user_email'])){
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#"><img src="images/users.png" class="img-rounded" alt="Cinque Terre" width="35" height="35">
-</a>
-    </div>
-
-   
+      </a>
+    </div>   
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li ><a href="#">myNetwork <span class="sr-only">(current)</span></a></li>
@@ -46,39 +39,32 @@ if(!isset($_SESSION['user_email'])){
          <?php
              $get_topics = "select * from topics";
              $run_topics = mysqli_query($con,$get_topics);
-
              while($row=mysqli_fetch_array($run_topics)){
              	$topic_id = $row['topic_id'];
              	$topic_title = $row['topic_title'];
-
              	echo " <li ><a href='home.php?topic=$topic_id'>$topic_title<span class='sr-only'>(current)</span></a></li>";
              }
-         ?>
-
-        
+         ?>        
       </ul>
       <form id="signin" class="navbar-form navbar-right" role="form" method="POST" action="results.php">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
                             <input id="email" type="text" class="form-control" name="email" value="" placeholder="Search" >                                        
                         </div>
-
-                        <button type="submit" class="btn btn-primary" name="search">Search</button>
-                   </form>
-     
+                       <button type="submit" class="btn btn-primary" name="search">Search</button>
+                   </form>     
     </div>
   </div>
 </nav>
-	<div class="container">
+    <div class="container">
     <div class="row profile">
-		<div class="col-md-3">
-			<div class="profile-sidebar">
+	<div class="col-md-3">
+	<div class="profile-sidebar">
              <?php
              $user = $_SESSION['user_email'];
              $get_user="select * from users where user_email='$user'";
              $run_user= mysqli_query($con,$get_user);
              $row = mysqli_fetch_array($run_user);
-
              $user_id= $row['user_id'];
              $user_name = $row['user_name'];
              $user_image = $row['user_image'];
@@ -86,7 +72,6 @@ if(!isset($_SESSION['user_email'])){
              $register_date = $row['register_date'];
              $last_login = $row['user_id'];
              ?>
-
 				<!-- SIDEBAR USERPIC -->
 				<div class="profile-userpic">
 					<?php echo "<img src='user/userimages/$user_image' class='img-responsive' >"  ?>
@@ -99,8 +84,7 @@ if(!isset($_SESSION['user_email'])){
 					Hello	<?php echo $user_name = $row['user_name'];  ?>
 					</div>
 				</div>
-				<!-- END SIDEBAR USER TITLE -->
-				
+				<!-- END SIDEBAR USER TITLE -->				
 				<!-- SIDEBAR MENU -->
 				<div class="profile-usermenu">
 					<ul class="nav">
@@ -139,7 +123,6 @@ if(!isset($_SESSION['user_email'])){
 							<i class="glyphicon glyphicon-flag"></i>
 							Help </a>
 						</li>
-
 					</ul>
 					<!-- SIDEBAR BUTTONS -->
 				<div class="profile-userbuttons">

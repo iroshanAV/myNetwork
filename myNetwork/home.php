@@ -158,7 +158,6 @@ if(!isset($_SESSION['user_email'])){
             	<?php get_posts(); ?>
             </div>
             </div>
-
 		</div>
 	</div>
 </div>

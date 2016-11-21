@@ -6,9 +6,7 @@ include("functions/functions.php");
 if(!isset($_SESSION['user_email'])){
    header("location: index.php");
 }else{
-
 ?>
-
 <html>
 <head>
 	<title>myNetwork</title>
@@ -35,9 +33,7 @@ if(!isset($_SESSION['user_email'])){
       </button>
       <a class="navbar-brand" href="#"><img src="images/users.png" class="img-rounded" alt="Cinque Terre" width="35" height="35">
 </a>
-    </div>
-
-   
+    </div>   
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li ><a href="#">myNetwork <span class="sr-only">(current)</span></a></li>
@@ -53,19 +49,15 @@ if(!isset($_SESSION['user_email'])){
 
              	echo " <li ><a href='home.php?topic=$topic_id'>$topic_title<span class='sr-only'>(current)</span></a></li>";
              }
-         ?>
-
-        
+         ?>        
       </ul>
       <form id="signin" class="navbar-form navbar-right" role="form" method="POST" action="results.php">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
                             <input id="email" type="text" class="form-control" name="email" value="" placeholder="Search" >                                        
                         </div>
-
                         <button type="submit" class="btn btn-primary" name="search">Search</button>
-                   </form>
-     
+                   </form>     
     </div>
   </div>
 </nav>
@@ -86,7 +78,6 @@ if(!isset($_SESSION['user_email'])){
              $register_date = $row['register_date'];
              $last_login = $row['user_id'];
              ?>
-
 				<!-- SIDEBAR USERPIC -->
 				<div class="profile-userpic">
 					<?php echo "<img src='user/userimages/$user_image' class='img-responsive' >"  ?>
